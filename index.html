@@ -124,6 +124,13 @@ h2 {
   background-color: var(--olt-purple);
   padding: 1em;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.flex-grow {
+  flex-grow: 1;
 }
 
 .centered {
@@ -275,7 +282,7 @@ h2 {
       <div class="flex centered-container">
         <div class="become-a-donor">
           <h3>Become a Donor</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          <p class="flex-grow">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
           ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
           aliquip ex ea commodo consequat. Duis aute irure dolor in
@@ -286,7 +293,7 @@ h2 {
         </div>
         <div class="become-a-friend">
           <h3>Become a Friend</h3>
-          <p>Friendship runs by calendar year: January 1 – December 31.
+          <p class="flex-grow">Friendship runs by calendar year: January 1 – December 31.
           Friendship becomes active once payment notification is received by Old
           Library Theatre. Anyone over the age of 18 is eligible to become a
           Friend of Old Library Theatre.  For $30, Friends receive guaranteed
