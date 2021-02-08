@@ -1,0 +1,339 @@
+<!doctype html>
+<html>
+  <head>
+    <link rel="stylesheet" href="normalize.css" />
+    <style>
+:root {
+  --olt-purple: #66348D;
+  --olt-white: #fefefe;
+  --olt-gray: #f8f8f8;
+}
+
+.header-block {
+  width: 50%;
+}
+header {
+  height: 100vh;
+}
+
+section {
+  padding-top: 2em;
+  padding-bottom: 2em;
+  min-height: 25vh;
+}
+header, footer, .auditions, .support {
+  background-color: black;
+  color: var(--olt-white);
+}
+
+.upcomming, .past-productions  {
+  background-color: var(--olt-gray);
+}
+
+.centered-container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.btn {
+  padding: .5em 2em;
+  display: inline-block;
+}
+a.btn {
+  text-decoration: none;
+}
+.btn-primary {
+  background-color: var(--olt-purple);
+  color: var(--olt-white);
+}
+
+.btn-white {
+  background-color: var(--olt-white);
+}
+.flex {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+}
+
+.news-article {
+  width: 30%;
+  position: relative;
+}
+
+.news-article hr {
+  height: 0.5em;
+  border: none;
+  background-color: var(--olt-purple);
+}
+
+h2 {
+  text-align: center;
+  margin: 0;
+}
+
+.audition {
+  background-color: black;
+  margin-bottom: 1em;
+}
+
+.audition div {
+  padding-left: 1em;
+  flex-grow: 1;
+}
+
+.subtitle {
+  text-align: center;
+}
+
+.news-image {
+  width: 100%;
+}
+
+.news-image::after {
+  margin-top: 2em;
+  width: 100%;
+  height: 0.5em;
+  background-color: var(--olt-purple);
+  content: " ";
+}
+
+
+.news-article time {
+  display: block;
+  background-color: var(--olt-purple);
+  color: var(--olt-white);
+  position: absolute;
+  right: -1em;
+  top: 1em;
+  z-index: 2;
+}
+
+.support .flex {
+  align-items: stretch;
+}
+.become-a-donor, .become-a-friend {
+  width: 47%;
+  background-color: var(--olt-purple);
+  padding: 1em;
+  text-align: center;
+}
+
+.centered {
+  text-align: center;
+}
+    </style>
+
+  </head>
+  <body>
+    <header class='main-header'>
+      <nav>
+        <ul class="flex centered-container">
+          <li class="">
+            About
+          </li>
+          <li class="">
+            Tickets
+          </li>
+          <li class="">
+            Productions
+          </li>
+          <li class="">
+            <img src="cropped-OLT-BW-Logo-Thick21 (1).png">
+          </li>
+          <li class="">
+            Auditions
+          </li>
+          <li class="">
+            Contact Us
+          </li>
+          <li class="btn btn-primary">
+            Donate Now
+          </li>
+        </ul>
+      </nav>
+      <div class="centered-container">
+        <div class="header-block">
+          <h1>Old Library Theatre</h1>
+          <p>QUALITY ENTERTAINMENT AT AN AFFORDABLE COST IN BERGEN COUNTY</p>
+          <p>Showcasing talented artists, creators, and performers who represent the full spectrum of the human experience at all stages of development.</p>
+          <a href=# class="btn btn-primary">BROWSE SHOWS</a>
+        </div>
+      </div>
+    </header>
+    <section class='our-mission'>
+      <h2>Our Mission</h2>
+      <p>Old Library Theatre</p>
+      <p>Our mission is to provide quality entertainment at an affordable cost
+      in Bergen County, showcasing talented artists, creators, and performers
+      who represent the full spectrum of the human experience at all stages of
+      development. We are committed to inclusion across race, ethnicity, gender
+      identity and expression, sexual orientation, religion, size, ability, and
+      age. We strive to create a theatrical community that reflects the
+      communities we serve. We commit to creating an environment on- and
+      off-stage where everyone feels safe and empowered to bring their full,
+      authentic selves to each experience and interaction. We acknowledge that
+      there will always be more work to be done and we invite all members of
+      our community to join us in doing that work.  </p>
+
+    </section>
+    <section class='upcomming'>
+      <h2>What's On</h2>
+      <p class="subtitle">Upcomming Performances</p>
+      <div class="flex centered-container">
+        <article class="upcomming-production">
+          <img src="https://via.placeholder.com/360x480/000000/" style="height: 480px; width: 350px" />
+          <h3>Show Name</h3>
+          <p>11 Nov - 15 Nov</p>
+          <a href="#">More Information</a>
+        </article>
+        <article class="upcomming-production">
+          <img src="https://via.placeholder.com/360x480/000000/" style="height: 480px; width: 350px" />
+          <h3>Show Name</h3>
+          <p>11 Nov - 15 Nov</p>
+          <a href="#">More Information</a>
+        </article>
+        <article class="upcomming-production">
+          <img src="https://via.placeholder.com/360x480/000000/" style="height: 480px; width: 350px" />
+          <h3>Show Name</h3>
+          <p>11 Nov - 15 Nov</p>
+          <a href="#">More Information</a>
+        </article>
+        <article class="upcomming-production">
+          <img src="https://via.placeholder.com/360x480/000000/" style="height: 480px; width: 350px" />
+          <h3>Show Name</h3>
+          <p>11 Nov - 15 Nov</p>
+          <a href="#">More Information</a>
+        </article>
+      </div>
+    </section>
+    <section class='auditions'>
+      <h2>Participate</h2>
+      <p class="subtitle">Upcomming Auditions</p>
+      <article class="audition flex centered-container">
+        <img src="https://via.placeholder.com/150x150" style="height: 150px; width: 150px;" />
+        <div>
+          <h3>2020 - A Perfect Year for Magical Thinking</h3>
+          <p>Some brief description of the show</p>
+        </div>
+        <a href="#" class="btn btn-primary">Register Now</a>
+      </article>
+      <article class="audition flex centered-container">
+        <img src="https://via.placeholder.com/150x150" style="height: 150px; width: 150px;" />
+        <div>
+          <h3>2020 - A Perfect Year for Magical Thinking</h3>
+          <p>Some brief description of the show</p>
+        </div>
+        <a href="#" class="btn btn-primary">Register Now</a>
+      </article>
+    </section>
+    <section class="news">
+      <h2>Let's Read</h2>
+      <p class="subtitle">News and Updates</p>
+      <div class="flex centered-container">
+        <article class="news-article">
+          <img class="news-image" src="https://via.placeholder.com/490x490"  />
+          <time>4.1.2021</time>
+          <hr />
+          <h3>Lorem Ipsum</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+          ad minim veniam, quis nostrud exercitation ullamco laboris </p>
+          <a href="#">Read More</a>
+        </article>
+        <article class="news-article">
+          <img class="news-image" src="https://via.placeholder.com/490x490"  />
+          <time>4.1.2021</time>
+          <hr />
+          <h3>Lorem Ipsum</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+          ad minim veniam, quis nostrud exercitation ullamco laboris </p>
+          <a href="#">Read More</a>
+        </article>
+        <article class="news-article">
+          <img class="news-image" src="https://via.placeholder.com/490x490" />
+          <time>4.1.2021</time>
+          <hr />
+          <h3>Lorem Ipsum</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+          ad minim veniam, quis nostrud exercitation ullamco laboris </p>
+          <a href="#">Read More</a>
+        </article>
+      </div>
+    </section>
+    <section class="support">
+      <h2>Support Us</h2>
+      <div class="flex centered-container">
+        <div class="become-a-donor">
+          <h3>Become a Donor</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+          ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.</p>
+          <a href="#" class="btn btn-white">Donate Now</a>
+        </div>
+        <div class="become-a-friend">
+          <h3>Become a Friend</h3>
+          <p>Friendship runs by calendar year: January 1 – December 31.
+          Friendship becomes active once payment notification is received by Old
+          Library Theatre. Anyone over the age of 18 is eligible to become a
+          Friend of Old Library Theatre.  For $30, Friends receive guaranteed
+          tickets for all season productions for $15 – up to 35% off regular
+          ticket prices. Friends are voting members of OLT and are automatically
+          added to OLT’s mailing list, invited to monthly meetings and are
+          eligible for election to executive board positions (see the
+          Constitution and Bylaws for additional information).</p>
+          <a href="#" class="btn btn-white">Become a Friend</a>
+        </div>
+      </div>
+    </section>
+    <section class="past-productions">
+      <h2>Our Gallery</h2>
+      <p class="subtitle">Past Performances</p>
+      <div class="centered-container">
+        <div class="centered timeline">
+          <a hef="#" class="btn btn-primary">View All</a>
+        </div>
+        </p>
+    </section>
+    <section class="social">
+      <h2>Updates</h2>
+      <p class="subtitle">Follow Us on Social Media</p>
+      <div class="flex centered-container">
+        <img src="https://via.placeholder.com/360x370" />
+        <img src="https://via.placeholder.com/360x370" />
+        <img src="https://via.placeholder.com/360x370" />
+        <img src="https://via.placeholder.com/360x370" />
+      </div>
+    </section>
+    <footer>
+      <div class="flex centered-container">
+        <ul>
+          <li>About</li>
+          <li>Tickets</li>
+          <li>Productions</li>
+        </ul>
+        <ul>
+          <li>Logo Here</li>
+          <li><a href="mailto:info@oldlibrarytheatre.net">mailto:info@oldlibrarytheatre.net</a></li>
+          <li>Facebook Instagram Twitter</li>
+        </ul>
+        <ul>
+          <li>Home</li>
+          <li>Auditions</li>
+        </ul>
+      </div>
+    </footer>
+  </body>
