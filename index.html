@@ -72,6 +72,7 @@ section {
   padding-top: 2em;
   padding-bottom: 2em;
   min-height: 25vh;
+  position: relative;
 }
 header, footer, .auditions, .support {
   background-color: black;
@@ -249,6 +250,21 @@ nav .nav-link::after {
   background-color: var(--olt-purple);
     margin-bottom: 3rem;
 }
+
+.margin-text{
+  position: absolute;
+    transform: rotate(
+-90deg
+);
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 5rem;
+    transform-origin: 0 0;
+    bottom: 0;
+    text-transform: uppercase;
+    color: #efefef;
+}
+}
     </style>
 
   </head>
@@ -289,6 +305,7 @@ nav .nav-link::after {
       </div>
     </header>
     <section class='our-mission'>
+        <p class="margin-text">Old Library Theatre</p>
       <div class="centered-container flex">
         <div class="half">
           <div class="image-h-purple">
@@ -316,6 +333,7 @@ nav .nav-link::after {
       </div>
     </section>
     <section class='upcomming'>
+        <p class="margin-text">Featured Shows</p>
       <div class="centered-container">
       <h2 class="text-flourish text-purple text-xl">What's On</h2>
       <p class="text-display text-xl">Upcomming Performances</p>
@@ -368,6 +386,7 @@ nav .nav-link::after {
       </article>
     </section>
     <section class="news">
+        <p class="margin-text">News and Updates</p>
       <h2 class="text-flourish text-centered text-xl text-purple ">Let's Read</h2>
       <p class="subtitle text-centered text-xl text-display">News and Updates</p>
       <div class="flex centered-container">
@@ -434,7 +453,8 @@ nav .nav-link::after {
         </div>
       </div>
     </section>
-    <section class="past-productions">
+    <section class="past-productions" style="min-height: 100vhgi;">
+        <p class="margin-text">Performances</p>
       <h2 class="text-flourish text-centered text-xl">Our Gallery</h2>
       <p class="subtitle text-centered text-xl text-display">Past Performances</p>
       <div class="centered-container">

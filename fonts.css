@@ -37,3 +37,14 @@
       url('assets/fonts/Oswald-SemiBold.woff') format('woff'),
       url('assets/fonts/Oswald-SemiBold.ttf') format('truetype');
   }
+
+      
+  @font-face {
+    font-family: "Oswald";
+    font-weight: 700;
+    src: url('assets/fonts/Oswald-Bold.eot');
+    src: url('assets/fonts/Oswald-Bold.eot?#iefix') format('embedded-opentype'),
+      url('assets/fonts/Oswald-Bold.woff2') format('woff2'), 
+      url('assets/fonts/Oswald-Bold.woff') format('woff'),
+      url('assets/fonts/Oswald-Bold.ttf') format('truetype');
+  }
