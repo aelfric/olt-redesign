@@ -2,15 +2,61 @@
 <html>
   <head>
     <link rel="stylesheet" href="normalize.css" />
+    <link rel="stylesheet" href="fonts.css" />
     <style>
 :root {
   --olt-purple: #66348D;
   --olt-white: #fefefe;
   --olt-gray: #f8f8f8;
+
+  --font-display: Oswald, sans-serif;
 }
 
 * {
   outline: 1px dotted red;
+}
+
+a {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  color: var(--olt-purple);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+.text-xxl {
+  font-size: 5rem;
+}
+
+.text-xl {
+  font-size: 3rem;
+}
+
+.text-l {
+  font-size: 2rem;
+}
+
+.text-purple {
+  color: var(--olt-purple);
+}
+
+.text-flourish {
+  font-family: "Mermaid Swash Caps", serif;
+  word-spacing: 0.5ch;
+}
+
+.text-display {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  font-weight: 600;
 }
 
 .header-block {
@@ -38,12 +84,16 @@ header, footer, .auditions, .support {
 
 .centered-container {
   width: 83%;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .btn {
   padding: .5em 2em;
   display: inline-block;
+  font-family:  var(--font-display);
+  font-weight: 600;
+  text-transform: uppercase;
 }
 a.btn {
   text-decoration: none;
@@ -73,8 +123,10 @@ nav ul li {
   flex-grow: 1;
   text-align: center;
   position: relative;
-  padding: .5rem 1rem;
   text-align: center;
+  font-family: var(--font-display);
+  font-weight: 600;
+  text-transform: uppercase;
 }
 nav .nav-link::after {
   content: '⬥';
@@ -93,9 +145,8 @@ nav .nav-link::after {
   background-color: var(--olt-purple);
 }
 
-h2 {
+.text-centered {
   text-align: center;
-  margin: 0;
 }
 
 .audition {
@@ -106,10 +157,6 @@ h2 {
 .audition div {
   padding-left: 1em;
   flex-grow: 1;
-}
-
-.subtitle {
-  text-align: center;
 }
 
 .news-image {
@@ -133,6 +180,9 @@ h2 {
   right: -1em;
   top: 1em;
   z-index: 2;
+  font-family: var(--font-display);
+  font-weight: 600;
+  padding: 0.5em;
 }
 
 .support .flex {
@@ -224,16 +274,16 @@ h2 {
           <li class="">
             Contact Us
           </li>
-          <li class="btn btn-primary">
-            Donate Now
+          <li><a class="btn btn-primary">
+            Donate Now</a>
           </li>
         </ul>
       </nav>
       <div class="centered-container">
         <div class="header-block">
-          <h1>Old Library Theatre</h1>
-          <p>QUALITY ENTERTAINMENT AT AN AFFORDABLE COST IN BERGEN COUNTY</p>
-          <p>Showcasing talented artists, creators, and performers who represent the full spectrum of the human experience at all stages of development.</p>
+          <h1 class="text-flourish text-xxl">Old Library Theatre</h1>
+          <p class="text-display text-xl">QUALITY ENTERTAINMENT AT AN AFFORDABLE COST IN BERGEN COUNTY</p>
+          <p class="text-l">Showcasing talented artists, creators, and performers who represent the full spectrum of the human experience at all stages of development.</p>
           <a href=# class="btn btn-primary">BROWSE SHOWS</a>
         </div>
       </div>
@@ -246,8 +296,8 @@ h2 {
           </div>
         </div>
         <div class="half">
-        <h2>Our Mission</h2>
-        <p>Old Library Theatre</p>
+        <h2 class="text-flourish text-xl text-purple">Our Mission</h2>
+        <p class="text-display text-xl">Old Library Theatre</p>
         <p>Our mission is to provide quality entertainment at an affordable cost
         in Bergen County, showcasing talented artists, creators, and performers
         who represent the full spectrum of the human experience at all stages of
@@ -266,42 +316,44 @@ h2 {
       </div>
     </section>
     <section class='upcomming'>
-      <h2>What's On</h2>
-      <p class="subtitle">Upcomming Performances</p>
+      <div class="centered-container">
+      <h2 class="text-flourish text-purple text-xl">What's On</h2>
+      <p class="text-display text-xl">Upcomming Performances</p>
+      </div>
       <div class="flex centered-container">
         <article class="upcomming-production">
           <img src="https://via.placeholder.com/360x480/000000/" style="height: 480px; width: 350px" />
-          <h3>Show Name</h3>
-          <p>11 Nov - 15 Nov</p>
+          <h3 class="text-display">Show Name</h3>
+          <p>11 NOV - 15 NOV</p>
           <a href="#">More Information</a>
         </article>
         <article class="upcomming-production">
           <img src="https://via.placeholder.com/360x480/000000/" style="height: 480px; width: 350px" />
-          <h3>Show Name</h3>
-          <p>11 Nov - 15 Nov</p>
+          <h3 class="text-display">Show Name</h3>
+          <p>11 NOV - 15 NOV</p>
           <a href="#">More Information</a>
         </article>
         <article class="upcomming-production">
           <img src="https://via.placeholder.com/360x480/000000/" style="height: 480px; width: 350px" />
-          <h3>Show Name</h3>
-          <p>11 Nov - 15 Nov</p>
+          <h3 class="text-display">Show Name</h3>
+          <p>11 NOV - 15 NOV</p>
           <a href="#">More Information</a>
         </article>
         <article class="upcomming-production">
           <img src="https://via.placeholder.com/360x480/000000/" style="height: 480px; width: 350px" />
-          <h3>Show Name</h3>
-          <p>11 Nov - 15 Nov</p>
+          <h3 class="text-display">Show Name</h3>
+          <p>11 NOV - 15 NOV</p>
           <a href="#">More Information</a>
         </article>
       </div>
     </section>
     <section class='auditions'>
-      <h2>Participate</h2>
-      <p class="subtitle">Upcomming Auditions</p>
+      <h2 class="text-flourish text-centered text-xl">Participate</h2>
+      <p class="subtitle text-centered text-xl text-display">Upcomming Auditions</p>
       <article class="audition flex centered-container">
         <img src="https://via.placeholder.com/150x150" style="height: 150px; width: 150px;" />
         <div>
-          <h3>2020 - A Perfect Year for Magical Thinking</h3>
+          <h3 class="text-display">2020 - A Perfect Year for Magical Thinking</h3>
           <p>Some brief description of the show</p>
         </div>
         <a href="#" class="btn btn-primary">Register Now</a>
@@ -309,21 +361,21 @@ h2 {
       <article class="audition flex centered-container">
         <img src="https://via.placeholder.com/150x150" style="height: 150px; width: 150px;" />
         <div>
-          <h3>2020 - A Perfect Year for Magical Thinking</h3>
+          <h3 class="text-display">2020 - A Perfect Year for Magical Thinking</h3>
           <p>Some brief description of the show</p>
         </div>
         <a href="#" class="btn btn-primary">Register Now</a>
       </article>
     </section>
     <section class="news">
-      <h2>Let's Read</h2>
-      <p class="subtitle">News and Updates</p>
+      <h2 class="text-flourish text-centered text-xl text-purple ">Let's Read</h2>
+      <p class="subtitle text-centered text-xl text-display">News and Updates</p>
       <div class="flex centered-container">
         <article class="news-article">
           <img class="news-image" src="https://via.placeholder.com/490x490"  />
           <time>4.1.2021</time>
           <hr />
-          <h3>Lorem Ipsum</h3>
+          <h3 class="text-l text-display">Lorem Ipsum</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
           ad minim veniam, quis nostrud exercitation ullamco laboris </p>
@@ -333,7 +385,7 @@ h2 {
           <img class="news-image" src="https://via.placeholder.com/490x490"  />
           <time>4.1.2021</time>
           <hr />
-          <h3>Lorem Ipsum</h3>
+          <h3 class="text-l text-display">Lorem Ipsum</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
           ad minim veniam, quis nostrud exercitation ullamco laboris </p>
@@ -343,7 +395,7 @@ h2 {
           <img class="news-image" src="https://via.placeholder.com/490x490" />
           <time>4.1.2021</time>
           <hr />
-          <h3>Lorem Ipsum</h3>
+          <h3 class="text-l text-display">Lorem Ipsum</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
           ad minim veniam, quis nostrud exercitation ullamco laboris </p>
@@ -352,10 +404,11 @@ h2 {
       </div>
     </section>
     <section class="support">
-      <h2>Support Us</h2>
+      <h2 class="text-flourish text-centered text-xl">Support Us</h2>
+      <div class="centered-container">
       <div class="flex centered-container">
         <div class="become-a-donor">
-          <h3>Become a Donor</h3>
+          <h3 class="text-display text-xl">Become a Donor</h3>
           <p class="flex-grow">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
           ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -366,7 +419,7 @@ h2 {
           <a href="#" class="btn btn-white">Donate Now</a>
         </div>
         <div class="become-a-friend">
-          <h3>Become a Friend</h3>
+          <h3 class="text-display text-xl">Become a Friend</h3>
           <p class="flex-grow">Friendship runs by calendar year: January 1 – December 31.
           Friendship becomes active once payment notification is received by Old
           Library Theatre. Anyone over the age of 18 is eligible to become a
@@ -378,11 +431,12 @@ h2 {
           Constitution and Bylaws for additional information).</p>
           <a href="#" class="btn btn-white">Become a Friend</a>
         </div>
+        </div>
       </div>
     </section>
     <section class="past-productions">
-      <h2>Our Gallery</h2>
-      <p class="subtitle">Past Performances</p>
+      <h2 class="text-flourish text-centered text-xl">Our Gallery</h2>
+      <p class="subtitle text-centered text-xl text-display">Past Performances</p>
       <div class="centered-container">
         <div class="centered timeline">
           <a hef="#" class="btn btn-primary">View All</a>
@@ -390,8 +444,8 @@ h2 {
         </p>
     </section>
     <section class="social">
-      <h2>Updates</h2>
-      <p class="subtitle">Follow Us on Social Media</p>
+      <h2 class="text-flourish text-centered text-xl">Updates</h2>
+      <p class="subtitle text-centered text-xl text-display">Follow Us on Social Media</p>
       <div class="flex centered-container">
         <img src="https://via.placeholder.com/360x370" />
         <img src="https://via.placeholder.com/360x370" />

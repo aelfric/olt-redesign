@@ -1,4 +1,3 @@
-// Do we need to serve a font? Add the @font-face styles here.
 @font-face {
     font-family: "Mermaid Swash Caps";
     src: url('assets/fonts/Mermaid\ Swash\ Caps.eot');
@@ -6,6 +5,16 @@
       url('assets/fonts/Mermaid\ Swash\ Caps.woff2') format('woff2'), 
       url('assets/fonts/Mermaid\ Swash\ Caps.woff') format('woff'),
       url('assets/fonts/Mermaid\ Swash\ Caps.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: "Open Sans";
+    font-weight: 500;
+    src: url('assets/fonts/OpenSans-Regular.eot');
+    src: url('assets/fonts/OpenSans-Regular.eot?#iefix') format('embedded-opentype'),
+      url('assets/fonts/OpenSans-Regular.woff2') format('woff2'), 
+      url('assets/fonts/OpenSans-Regular.woff') format('woff'),
+      url('assets/fonts/OpenSans-Regular.ttf') format('truetype');
   }
   
   @font-face {
@@ -16,4 +25,15 @@
       url('assets/fonts/Oswald-Regular.woff2') format('woff2'), 
       url('assets/fonts/Oswald-Regular.woff') format('woff'),
       url('assets/fonts/Oswald-Regular.ttf') format('truetype');
+  }
+
+    
+  @font-face {
+    font-family: "Oswald";
+    font-weight: 600;
+    src: url('assets/fonts/Oswald-SemiBold.eot');
+    src: url('assets/fonts/Oswald-SemiBold.eot?#iefix') format('embedded-opentype'),
+      url('assets/fonts/Oswald-SemiBold.woff2') format('woff2'), 
+      url('assets/fonts/Oswald-SemiBold.woff') format('woff'),
+      url('assets/fonts/Oswald-SemiBold.ttf') format('truetype');
   }
