@@ -48,3 +48,20 @@
       url('assets/fonts/Oswald-Bold.woff') format('woff'),
       url('assets/fonts/Oswald-Bold.ttf') format('truetype');
   }
+
+  html {
+    font-size: 16px;
+  }
+
+  @media screen and (max-width: 1000px) {
+    html {
+      font-size: 12px;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    html {
+      font-size: 10px;
+    }
+  }
+
