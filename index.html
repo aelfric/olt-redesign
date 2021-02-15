@@ -13,24 +13,47 @@
       <nav class="full-width">
         <ul class="flex centered-container">
           <li class="nav-link">
-            About
+              <button type="button" class="menu-open">About</button>
+
+            <div class="sub-menu">
+                <button type="button" class="menu-close">close</button>
+              <ul>
+                <li><a href="#">ABOUT OLT</a></li>
+                <li><a href="#">OUR MISSION</a></li>
+                <li><a href="#">DIRECTIONS</a></li>
+                <li><a href="#">EXECUTIVE BOARD</a></lid="menu-item-88">
+                <li><a href="#">STAFF</a></lid="menu-item-1017">
+                <li><a href="#">SUPPORT OLT</a></li>
+                <li><a href="#">AWARDS AND NOMINATIONS</a></li>
+                <li ><a href="#">DOWNLOADS</a></li>
+                </ul>
+              </div>
           </li>
           <li class="nav-link">
-            Tickets
+            <a href="#">Tickets</a>
           </li>
-          <li class="nav-link">
-            Productions
+          <li>
+              <button type="button" class="menu-open">Productions</button>
+            <div class="sub-menu">
+                <button type="button" class="menu-close">close</button>
+                <ul>
+                    <li ><a href="#">2021 Season</a></li>
+                    <li ><a href="#">NEWS AND REVIEWS</a></li>
+                    <li ><a href="#">PAST PRODUCTIONS</a></li>
+                    <li ><a href="#">READER’S THEATRE</a></li>
+                  </ul>
+            </div>
           </li>
           <li class="nav-logo">
             <img src="cropped-OLT-BW-Logo-Thick21 (1).png">
           </li>
           <li class="nav-link">
-            Auditions
+              <a href="#">Auditions</a>
           </li>
           <li class="">
-            Contact Us
+              <a href="#">Contact Us</a>
           </li>
-          <li><a class="btn btn-primary">
+          <li><a href="#" class="btn btn-primary">
             Donate Now</a>
           </li>
         </ul>
@@ -254,8 +277,8 @@
               <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="height: 1em; fill: var(--olt-purple); margin-right: 1em;">
                 <path d="m12 0c-4.962 0-9 4.066-9 9.065 0 7.103 8.154 14.437 8.501 14.745.143.127.321.19.499.19s.356-.063.499-.189c.347-.309 8.501-7.643 8.501-14.746 0-4.999-4.038-9.065-9-9.065zm0 14c-2.757 0-5-2.243-5-5s2.243-5 5-5 5 2.243 5 5-2.243 5-5 5z"/>
                 </svg>
-            10-10 20th Street (at the corner of Kipp Street)<br />
-Fair Lawn, NJ 07410
+            <a href="geo:40.933300,-74.119610">10-10 20th Street (at the corner of Kipp Street)<br />
+Fair Lawn, NJ 07410</a>
 <li>
     <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
     viewBox="0 0 405.333 405.333" style="height: 1em; fill: var(--olt-purple); margin-right: 1em;" xml:space="preserve">
@@ -300,4 +323,39 @@ Fair Lawn, NJ 07410
         </ul>
       </div>
     </footer>
+  
+    <script>
+(function(){
+
+
+  function toggleClass(element, className){
+    if (element.classList.contains(className)) {
+        element.classList.remove(className);
+      } else {
+        element.classList.add(className);
+      }
+  }
+    var menuToggles = document.getElementsByClassName('menu-open');
+
+  for (var i = 0; i < menuToggles.length; i++) {
+    menuToggles[i].addEventListener('click', function(evt) {
+    toggleClass(evt.target.nextElementSibling, 'sub-menu__open');
+    toggleClass(evt.target.nextElementSibling, 'sub-menu__displayed');
+    });
+  }
+
+  var menuToggles = document.getElementsByClassName('menu-close');
+
+for (var i = 0; i < menuToggles.length; i++) {
+  menuToggles[i].addEventListener('click', function(evt) {
+  toggleClass(evt.target.parentElement, 'sub-menu__open');
+
+  setTimeout(function() {
+      toggleClass(evt.target.parentElement, 'sub-menu__displayed');
+    }, 501);
+  });
+}
+    
+})()
+    </script>
   </body>
