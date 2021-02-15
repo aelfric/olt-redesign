@@ -2,7 +2,7 @@
 <html>
   <head>
       <meta name="viewport" content="width=device-width, initial-scale=1">
-
+      <meta charset="UTF-8" />
     <link rel="stylesheet" href="normalize.css" />
     <link rel="stylesheet" href="fonts.css" />
     <link rel="stylesheet" href="style.css" />
@@ -108,7 +108,7 @@
     <section class='auditions'>
       <h2 class="text-flourish text-centered text-xl">Participate</h2>
       <p class="subtitle text-centered text-xl text-display">Upcomming Auditions</p>
-      <article class="audition flex centered-container">
+      <article class="audition flex flex-row centered-container">
         <img src="https://via.placeholder.com/150x150" style="height: 150px; width: 150px;" />
         <div>
           <h3 class="text-display">2020 - A Perfect Year for Magical Thinking</h3>
@@ -116,7 +116,7 @@
         </div>
         <a href="#" class="btn btn-primary">Register Now</a>
       </article>
-      <article class="audition flex centered-container">
+      <article class="audition flex flex-row centered-container">
         <img src="https://via.placeholder.com/150x150" style="height: 150px; width: 150px;" />
         <div>
           <h3 class="text-display">2020 - A Perfect Year for Magical Thinking</h3>
@@ -161,6 +161,12 @@
           <a href="#">Read More</a>
         </article>
       </div>
+      <div class="centered-container">
+        <div class="centered">
+          <a hef="#" class="btn btn-primary">View All</a>
+        </div>
+        </p>
+        </div>
     </section>
     <section class="support">
       <h2 class="text-flourish text-centered text-xl">Support Us</h2>
@@ -192,16 +198,25 @@
         </div>
         </div>
       </div>
+
     </section>
     <section class="past-productions" style="min-height: 100vh;">
         <p class="margin-text">Performances</p>
       <h2 class="text-flourish text-centered text-xl text-purple">Our Gallery</h2>
       <p class="subtitle text-centered text-xl text-display">Past Performances</p>
       <div class="centered-container">
-        <div class="centered timeline">
+        <div class="centered">
+          <div class="album-grid">
+              <img class="grid-1x1" src="https://via.placeholder.com/490x320" />
+              <img class="grid-1x1" src="https://via.placeholder.com/490x320" />
+              <img class="grid-1x2" src="https://via.placeholder.com/490x690" />
+              <img class="grid-1x1" src="https://via.placeholder.com/490x320" />
+              <img class="grid-1x1" src="https://via.placeholder.com/490x320" />
+          </div>
           <a hef="#" class="btn btn-primary">View All</a>
         </div>
         </p>
+        </div>
     </section>
     <section class="social">
       <h2 class="text-flourish text-centered text-xl text-purple">Updates</h2>
@@ -223,10 +238,33 @@
           <li>Productions</li>
         </ul>
         <ul>
-          <li><a class="text-white" href="mailto:info@oldlibrarytheatre.net">info@oldlibrarytheatre.net</a></li>
-          <li>10-10 20th Street (at the corner of Kipp Street)<br />
+          <li>
+              <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+              viewBox="0 0 512 512" style="height: 1em; margin-right: 1em; fill: var(--olt-purple);" xml:space="preserve" >
+           <g>
+               <polygon points="339.392,258.624 512,367.744 512,144.896 		"/>
+               <polygon points="0,144.896 0,367.744 172.608,258.624 		"/>
+               <path d="M480,80H32C16.032,80,3.36,91.904,0.96,107.232L256,275.264l255.04-168.032C508.64,91.904,495.968,80,480,80z"/>
+               <path d="M310.08,277.952l-45.28,29.824c-2.688,1.76-5.728,2.624-8.8,2.624c-3.072,0-6.112-0.864-8.8-2.624l-45.28-29.856
+                 L1.024,404.992C3.488,420.192,16.096,432,32,432h448c15.904,0,28.512-11.808,30.976-27.008L310.08,277.952z"/>
+           </g>
+           </svg>
+            <a class="text-white" href="mailto:info@oldlibrarytheatre.net">info@oldlibrarytheatre.net</a></li>
+          <li>
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="height: 1em; fill: var(--olt-purple); margin-right: 1em;">
+                <path d="m12 0c-4.962 0-9 4.066-9 9.065 0 7.103 8.154 14.437 8.501 14.745.143.127.321.19.499.19s.356-.063.499-.189c.347-.309 8.501-7.643 8.501-14.746 0-4.999-4.038-9.065-9-9.065zm0 14c-2.757 0-5-2.243-5-5s2.243-5 5-5 5 2.243 5 5-2.243 5-5 5z"/>
+                </svg>
+            10-10 20th Street (at the corner of Kipp Street)<br />
 Fair Lawn, NJ 07410
-<li>973.OLT.4420</li>
+<li>
+    <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+    viewBox="0 0 405.333 405.333" style="height: 1em; fill: var(--olt-purple); margin-right: 1em;" xml:space="preserve">
+     <path d="M373.333,266.88c-25.003,0-49.493-3.904-72.704-11.563c-11.328-3.904-24.192-0.896-31.637,6.699l-46.016,34.752
+       c-52.8-28.181-86.592-61.952-114.389-114.368l33.813-44.928c8.512-8.512,11.563-20.971,7.915-32.64
+       C142.592,81.472,138.667,56.96,138.667,32c0-17.643-14.357-32-32-32H32C14.357,0,0,14.357,0,32
+       c0,205.845,167.488,373.333,373.333,373.333c17.643,0,32-14.357,32-32V298.88C405.333,281.237,390.976,266.88,373.333,266.88z"/>
+ </svg>
+  <a href="tel:973.OLT.4420">973.OLT.4420</a></li>
           <li>
             <span class="circle bg-purple">
                 <svg id="Bold" enable-background="new 0 0 24 24" style="fill: white;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
