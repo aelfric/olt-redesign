@@ -45,7 +45,7 @@
             </div>
           </li>
           <li class="nav-logo">
-            <img src="cropped-OLT-BW-Logo-Thick21 (1).png">
+            <a href="#"><img src="cropped-OLT-BW-Logo-Thick21 (1).png"></a>
           </li>
           <li class="nav-link">
               <a href="#">Auditions</a>
@@ -326,36 +326,38 @@ Fair Lawn, NJ 07410</a>
   
     <script>
 (function(){
+  function toggleMenu(element){
+    const openClass = "sub-menu__open";
+    const visibleClass = "sub-menu__displayed";
 
-
-  function toggleClass(element, className){
-    if (element.classList.contains(className)) {
-        element.classList.remove(className);
+    if (element.classList.contains(openClass)) {
+        element.classList.remove(openClass);
+        setTimeout(function() {
+          element.classList.remove(evt.target.parentElement, visibleClass);
+    }, 501);
       } else {
-        element.classList.add(className);
+        element.classList.add(openClass);
+        element.classList.add(visibleClass);
+        element.getElementsByTagName('button')[0].focus();
       }
   }
     var menuToggles = document.getElementsByClassName('menu-open');
 
   for (var i = 0; i < menuToggles.length; i++) {
     menuToggles[i].addEventListener('click', function(evt) {
-    toggleClass(evt.target.nextElementSibling, 'sub-menu__open');
-    toggleClass(evt.target.nextElementSibling, 'sub-menu__displayed');
+    toggleMenu(evt.target.nextElementSibling);
     });
   }
 
   var menuToggles = document.getElementsByClassName('menu-close');
 
+  
+
 for (var i = 0; i < menuToggles.length; i++) {
   menuToggles[i].addEventListener('click', function(evt) {
-  toggleClass(evt.target.parentElement, 'sub-menu__open');
-
-  setTimeout(function() {
-      toggleClass(evt.target.parentElement, 'sub-menu__displayed');
-    }, 501);
+  toggleMenu(evt.target.parentElement);
   });
 }
-    
 })()
     </script>
   </body>
