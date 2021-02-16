@@ -98,6 +98,8 @@ section {
   padding-bottom: 2em;
   min-height: 25vh;
   position: relative;
+  border-left: 6rem solid transparent;
+  border-right: 6rem solid transparent;
 }
 header, footer, .auditions, .support {
   background-color: black;
@@ -109,7 +111,7 @@ header, footer, .auditions, .support {
 }
 
 .centered-container {
-  width: 83%;
+  /*width: 83%;*/
   margin-left: auto;
   margin-right: auto;
 }
@@ -337,14 +339,13 @@ font-weight: bold;
 
 .margin-text{
   position: absolute;
-    transform: rotate(
--90deg
-);
+    transform: rotate(90deg);
     font-family: var(--font-display);
     font-weight: 700;
     font-size: 5rem;
     transform-origin: 0 0;
-    bottom: 0;
+    top: 0;
+    left: 0;
     text-transform: uppercase;
     color: #efefef;
 }
