@@ -17,16 +17,8 @@
 
           <div class="sub-menu">
             <button type="button" class="menu-close">close</button>
-            <ul>
-              <li><a href="#">ABOUT OLT</a></li>
-              <li><a href="#">OUR MISSION</a></li>
-              <li><a href="#">DIRECTIONS</a></li>
-              <li><a href="#">EXECUTIVE BOARD</a></lid="menu-item-88">
-              <li><a href="#">STAFF</a></lid="menu-item-1017">
-              <li><a href="#">SUPPORT OLT</a></li>
-              <li><a href="#">AWARDS AND NOMINATIONS</a></li>
-              <li><a href="#">DOWNLOADS</a></li>
-            </ul>
+
+            <?php wp_nav_menu( array( 'theme_location' => 'about-menu' ) ); ?>
           </div>
         </li>
         <li class="nav-link">
