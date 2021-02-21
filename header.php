@@ -52,8 +52,8 @@
     </nav>
     <div class="centered-container flex">
       <div class="header-block half">
-        <h1 class="text-flourish text-xxl">Old Library Theatre</h1>
-        <p class="text-display text-xl">QUALITY ENTERTAINMENT AT AN AFFORDABLE COST IN BERGEN COUNTY</p>
+        <h1 class="text-flourish text-xxl"><?= get_bloginfo('name') ?></h1>
+        <p class="text-display text-xl"><?= get_bloginfo('description') ?></p>
         <p class="text-l">Showcasing talented artists, creators, and performers who represent the full spectrum of the human experience at all stages of development.</p>
         <a href=# class="btn btn-primary">BROWSE SHOWS</a>
       </div>
