@@ -1,3 +1,7 @@
+/*
+Theme Name: OLT 2021
+
+*/
 :root {
   --olt-purple: #66348D;
   --olt-white: #fefefe;
@@ -9,6 +13,10 @@
 
 * {
   box-sizing: border-box;
+}
+
+em {
+  font-style: italic;
 }
 
 img {max-width: 100%;}
@@ -114,6 +122,7 @@ header, footer, .auditions, .support {
   /*width: 83%;*/
   margin-left: auto;
   margin-right: auto;
+  max-width: 1550px;
 }
 
 .flex > .btn, li .btn {margin: 0;}
@@ -202,6 +211,7 @@ nav .nav-link::after {
 .news-article {
   width: 30%;
   position: relative;
+  cursor: pointer;
 }
 
 .news-article hr {
@@ -224,18 +234,18 @@ nav .nav-link::after {
   flex-grow: 1;
 }
 
-.news-image {
-  width: 100%;
+.news-article--image {
+    height: 490px;
+    display: flex;
+    align-items: center;
 }
 
-.news-image::after {
-  margin-top: 2em;
-  width: 100%;
-  height: 0.5em;
-  background-color: var(--olt-purple);
-  content: " ";
+.news-article--image::before {
+  padding-bottom: 100%;
+  content: "";
+  display: inline-block;
+  vertical-align: top;
 }
-
 
 .news-article time {
   display: block;
@@ -454,6 +464,42 @@ section.past-productions {
   visibility: visible;
 }
 
+
+.content p {
+  margin: 1em 0 0 0;
+}
+
+.timeline {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-top: 1em;
+}
+
+.timeline li {
+  position: relative;
+}
+
+.timeline::before {
+  top: 0.125em;
+  border: 2px solid #e6e6e6;
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 100%;
+}
+.timeline li::before {
+  width: .5em;
+  height: .5em;
+  text-align: center;
+  line-height: .5em;
+  border-radius: 50%;
+  background: var(--olt-purple);
+  margin: 0 1em 1em 1em;
+  display: block;
+  position: relative;
+  content: " ";
+}
 
 @media screen and (max-width: 1000px) {
     body {
