@@ -21,7 +21,7 @@ class OltSiteOptions
     public function olt_site_settings_section($wp_customize)
     {
         $wp_customize->add_section($this->SECTION, array(
-            'title' => 'OLT-specific Settings',
+            'title' => 'Site-Wide Settings',
             'priority' => 2,
             'description' => 'Options for customizing some site-wide theme settings'
         ));
@@ -59,7 +59,7 @@ class OltSiteOptions
             )
         ));
 
-        $wp_customize->add_setting('olt_settings_friend_image_setting', array(
+        $wp_customize->add_setting('olt_settings_friend_image', array(
             'default' => '',
             'type' => 'theme_mod',
             'capability' => 'edit_theme_options',
@@ -68,17 +68,17 @@ class OltSiteOptions
 
         $wp_customize->add_control(new WP_Customize_Cropped_Image_Control(
             $wp_customize,
-            'olt_settings_friend_image',
+            'olt_settings_friend_image_input',
             array(
                 'label' => 'Become a Friend Image',
                 'section' => $this->SECTION,
                 'height' => 470,
                 'width' => 1280,
-                'settings' => 'olt_settings_friend_image_setting'
+                'settings' => 'olt_settings_friend_image'
             )
         ));
 
-        $wp_customize->add_setting('olt_settings_footer_image_setting', array(
+        $wp_customize->add_setting('olt_settings_footer_image', array(
             'default' => '',
             'type' => 'theme_mod',
             'capability' => 'edit_theme_options',
@@ -87,13 +87,13 @@ class OltSiteOptions
 
         $wp_customize->add_control(new WP_Customize_Cropped_Image_Control(
             $wp_customize,
-            'olt_settings_footer_image',
+            'olt_settings_footer_image_input',
             array(
                 'label' => 'Footer Image',
                 'section' => $this->SECTION,
-                'height' => 510,
-                'width' => 510,
-                'settings' => 'olt_settings_footer_image_setting'
+                'height' => 470,
+                'width' => 1280,
+                'settings' => 'olt_settings_footer_image'
             )
         ));
     }
