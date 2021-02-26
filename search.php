@@ -5,9 +5,11 @@
     <p class="subtitle text-centered text-xl text-display">News and Updates</p>
     <div class="flex flex-top centered-container">
       <?php
+      $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
       $args = array(
         'posts_per_page' => 18,
-        'ignore_sticky_posts' => 1
+        'ignore_sticky_posts' => 1,
+        'paged' => $paged
       );
       $query = new WP_Query($args);
       if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
@@ -29,7 +31,7 @@
     </div>
     <div class="centered-container">
       <div class="centered">
-        <a hef="#" class="btn btn-primary">View All</a>
+        <?= the_posts_pagination() ?>
       </div>
       </p>
     </div>

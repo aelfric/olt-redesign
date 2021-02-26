@@ -25,7 +25,7 @@
     </div>
     <?php if (get_field("footer_image")) : ?>
       <div class="spacer" style="width: 220px; height: 320px;"></div>
-      <div class="image-v-purple">
+      <div class="image-v-purple" style="max-width: 1280px;">
         <img src="<?= get_field("footer_image")["sizes"]["footer-image"] ?>" />
       </div>
     <?php endif; ?>
@@ -38,30 +38,24 @@
     <p class="text-display text-xl">Upcomming Performances</p>
   </div>
   <div class="flex centered-container">
+    <?php 
+    $args = array(
+      'post_type' => 'production',
+      'posts_per_page' => 4,
+      'ignore_sticky_posts' => 1
+    );
+    $query = new WP_Query($args);
+    if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
     <article class="upcomming-production">
-      <img src="https://via.placeholder.com/360x480/000000/" style="height: 480px; width: 350px" />
-      <h3 class="text-display">Show Name</h3>
-      <p>11 NOV - 15 NOV</p>
-      <a href="#">More Information</a>
+      <?php echo the_post_thumbnail('production-marquee') ?>
+      <h3 class="text-display"><?= the_title() ?></h3>
+      <p style="text-transform: uppercase;"><?= get_field("start_date") ?> - <?= get_field("end_date") ?></p>
+      <a href="<?= the_permalink() ?>">More Information</a>
     </article>
-    <article class="upcomming-production">
-      <img src="https://via.placeholder.com/360x480/000000/" style="height: 480px; width: 350px" />
-      <h3 class="text-display">Show Name</h3>
-      <p>11 NOV - 15 NOV</p>
-      <a href="#">More Information</a>
-    </article>
-    <article class="upcomming-production">
-      <img src="https://via.placeholder.com/360x480/000000/" style="height: 480px; width: 350px" />
-      <h3 class="text-display">Show Name</h3>
-      <p>11 NOV - 15 NOV</p>
-      <a href="#">More Information</a>
-    </article>
-    <article class="upcomming-production">
-      <img src="https://via.placeholder.com/360x480/000000/" style="height: 480px; width: 350px" />
-      <h3 class="text-display">Show Name</h3>
-      <p>11 NOV - 15 NOV</p>
-      <a href="#">More Information</a>
-    </article>
+<?php endwhile;
+    else : ?>
+      <p><?php esc_html_e('Sorry, no posts matched your criteria.'); ?></p>
+    <?php endif; ?>
   </div>
 </section>
 <section class='auditions'>
