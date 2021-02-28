@@ -21,7 +21,6 @@
       <div class="content">
         <?= the_content() ?>
       </div>
-      <!-- <p><a href="#" class="btn btn-primary">Read More</a></p> -->
     </div>
     <?php if (get_field("footer_image")) : ?>
       <div class="spacer" style="width: 220px; height: 320px;"></div>
@@ -31,11 +30,11 @@
     <?php endif; ?>
   </div>
 </section>
-<section class='upcomming' id="productions">
+<section class='upcoming' id="productions">
   <p class="margin-text  margin-text--left">Featured Shows</p>
   <div class="centered-container">
     <h2 class="text-flourish text-purple text-xl">What's On</h2>
-    <p class="text-display text-xl">Upcomming Performances</p>
+    <p class="text-display text-xl">Upcoming Performances</p>
   </div>
   <div class="flex centered-container">
     <?php
@@ -51,7 +50,7 @@
     );
     $productions_query = new WP_Query($args);
     if ($productions_query->have_posts()) : while ($productions_query->have_posts()) : $productions_query->the_post(); ?>
-        <article class="upcomming-production">
+        <article class="upcoming-production">
           <div class='production--image'>
             <?php echo the_post_thumbnail('production-marquee') ?>
           </div>
@@ -68,7 +67,7 @@
 </section>
 <section class='auditions' id="auditions">
   <h2 class="text-flourish text-centered text-xl">Participate</h2>
-  <p class="subtitle text-centered text-xl text-display">Upcomming Auditions</p>
+  <p class="subtitle text-centered text-xl text-display">Upcoming Auditions</p>
   <?php
   $args = array(
     'post_type' => 'audition',

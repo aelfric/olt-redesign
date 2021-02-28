@@ -129,7 +129,7 @@ header, footer, .auditions, .support {
   color: var(--olt-white);
 }
 
-.upcomming, .past-productions  {
+.upcoming, .past-productions  {
   background-color: var(--olt-gray);
 }
 
