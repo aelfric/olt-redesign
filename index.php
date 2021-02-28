@@ -46,7 +46,8 @@
       'meta_key' => 'start_date',
       'orderby' => 'meta_value_num',
       'meta_type' => 'DATE',
-      'order' => 'ASC'
+      'order' => 'ASC',
+      'no_found_rows' => true
     );
     $productions_query = new WP_Query($args);
     if ($productions_query->have_posts()) : while ($productions_query->have_posts()) : $productions_query->the_post(); ?>
@@ -99,7 +100,8 @@
     <?php
     $args = array(
       'posts_per_page' => 3,
-      'ignore_sticky_posts' => 1
+      'ignore_sticky_posts' => 1,
+      'no_found_rows' => true
     );
     $posts_query = new WP_Query($args);
     if ($posts_query->have_posts()) : while ($posts_query->have_posts()) : $posts_query->the_post(); ?>
@@ -177,36 +179,36 @@
   <p class="subtitle text-centered text-xl text-display">Past Performances</p>
   <div class="centered-container">
     <ul class="timeline">
-      <li>2009</li>
-      <li>2010</li>
-      <li>2011</li>
-      <li>2012</li>
-      <li>2013</li>
-      <li>2014</li>
-      <li>2015</li>
-      <li>2016</li>
-      <li>2017</li>
-      <li>2018</li>
-      <li>2019</li>
-      <li>2020</li>
+    <?php
+        $args = array(
+          'post_type' => 'timeline-year',
+          'posts_per_page' => 10,
+          'orderby' => 'title',
+          'order' => 'ASC',
+          'no_found_rows' => true
+        );
+        $gallery_query = new WP_Query($args);
+        while ($gallery_query->have_posts()){ 
+          $gallery_query->the_post();?>
+      <li class='timeline-year <?= get_the_title() == '2019' ? 'active' : '' ?>' data-post-id="<?= the_ID() ?>"><?= the_title() ?></li>
+      <?php } ?>
     </ul>
     <div class="centered">
       <div class="album">
         <?php
         $args = array(
           'post_type' => 'timeline-year',
-          'posts_per_page' => 1
+          'posts_per_page' => 10,
+          'no_found_rows' => true
         );
         $gallery_query = new WP_Query($args);
-        if ($gallery_query->have_posts()) : while ($gallery_query->have_posts()) :
-            $gallery_query->the_post(); ?>
-            <?= the_content() ?>
-          <?php endwhile;
-        else : ?>
+        if ($gallery_query->have_posts()) : $gallery_query->the_post(); ?>
+          <?= the_content() ?>
+        <?php else : ?>
           <p><?php esc_html_e('Sorry, no posts matched your criteria.'); ?></p>
         <?php endif; ?>
-        <a hef="#" class="btn btn-primary">View All</a>
       </div>
+      <a hef="#" class="btn btn-primary">View All</a>
     </div>
   </div>
 </section>

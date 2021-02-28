@@ -257,3 +257,27 @@ function olt_gutenberg_blocks(){
 }
 
 add_action('init', 'olt_gutenberg_blocks');
+
+function prefix_add_api_endpoints() {
+	add_rewrite_tag( '%api_item_id%', '([0-9]+)' );
+	add_rewrite_rule( 'api/items/([0-9]+)/?', 'index.php?api_item_id=$matches[1]', 'top' );
+}
+add_action( 'init', 'prefix_add_api_endpoints' );
+
+/**
+ * Handle data (maybe) passed to the API endpoint.
+ */
+function prefix_do_api() {
+	global $wp_query;
+
+	$item_id = $wp_query->get( 'api_item_id' );
+
+	if ( ! empty( $item_id ) ) {
+		$response = get_post($item_id, ARRAY_A);
+
+		// Do stuff with $item_id
+
+		wp_send_json( $response );
+	}
+}
+add_action( 'template_redirect', 'prefix_do_api' );

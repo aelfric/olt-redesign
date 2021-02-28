@@ -50,4 +50,27 @@
       }
     }
   }
+
+
+  function loadTimelineYear(event){
+    const years = document.querySelectorAll('.timeline-year.active');
+    for(let i = 0; i < years.length; i++){
+      years[i].classList.remove('active');
+    }
+  
+    const album = document.querySelector('.past-productions .album');
+    event.target.classList.add('active');
+    const yearId = event.target.getAttribute("data-post-id");
+    album.innerHTML = "<p>Loading...</p>";
+    fetch('/api/items/'+yearId +'/').then(response => {
+      return response.json();
+    }).then(jsonResponse => {
+      album.innerHTML = jsonResponse.post_content;
+    });
+  }
+
+  const years = document.querySelectorAll('.timeline-year');
+  for(let i = 0; i < years.length; i++){
+    years[i].addEventListener('click', loadTimelineYear);
+  }
 })();

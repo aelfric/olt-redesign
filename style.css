@@ -497,6 +497,7 @@ section.past-productions {
 
 .timeline li {
   position: relative;
+  cursor: pointer;
 }
 
 .timeline::before {
@@ -507,6 +508,7 @@ section.past-productions {
   position: absolute;
   width: 100%;
 }
+
 .timeline li::before {
   width: .5em;
   height: .5em;
@@ -518,6 +520,9 @@ section.past-productions {
   display: block;
   position: relative;
   content: " ";
+}
+.timeline li.active::before {
+  box-shadow: 0 0 0px 5px rgb(102 52 141 / 25%);
 }
 
 @media screen and (max-width: 1000px) {
