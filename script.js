@@ -62,10 +62,10 @@
     event.target.classList.add('active');
     const yearId = event.target.getAttribute("data-post-id");
     album.innerHTML = "<p>Loading...</p>";
-    fetch('/api/items/'+yearId +'/').then(response => {
+    fetch(`/wp-json/wp/v2/timeline-year/${yearId}/`).then(response => {
       return response.json();
     }).then(jsonResponse => {
-      album.innerHTML = jsonResponse.post_content;
+      album.innerHTML = jsonResponse.content.rendered;
     });
   }
 
