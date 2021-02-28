@@ -54,6 +54,7 @@
           <div class='production--image'>
             <?php echo the_post_thumbnail('production-marquee') ?>
           </div>
+          <hr />
           <h3 class="text-display"><?= the_title() ?></h3>
           <p style="text-transform: uppercase;"><?= get_field("start_date") ?> - <?= get_field("end_date") ?></p>
           <a href="<?= the_permalink() ?>">More Information</a>
@@ -77,7 +78,7 @@
   if ($auditions_query->have_posts()) : while ($auditions_query->have_posts()) : $auditions_query->the_post(); ?>
       <article class="audition flex flex-row centered-container">
         <div class='audition--image'>
-          <?php echo the_post_thumbnail('audition-thumb') ?>
+          <?= the_post_thumbnail('audition-thumb') ?>
         </div>
         <div>
           <h3 class="text-display"><?= the_title() ?></h3>
@@ -190,16 +191,23 @@
       <li>2020</li>
     </ul>
     <div class="centered">
-      <div class="album-grid">
-        <img class="grid-1x1" src="https://via.placeholder.com/490x320" />
-        <img class="grid-1x1" src="https://via.placeholder.com/490x320" />
-        <img class="grid-1x2" src="https://via.placeholder.com/490x690" />
-        <img class="grid-1x1" src="https://via.placeholder.com/490x320" />
-        <img class="grid-1x1" src="https://via.placeholder.com/490x320" />
+      <div class="album">
+        <?php
+        $args = array(
+          'post_type' => 'timeline-year',
+          'posts_per_page' => 1
+        );
+        $gallery_query = new WP_Query($args);
+        if ($gallery_query->have_posts()) : while ($gallery_query->have_posts()) :
+            $gallery_query->the_post(); ?>
+            <?= the_content() ?>
+          <?php endwhile;
+        else : ?>
+          <p><?php esc_html_e('Sorry, no posts matched your criteria.'); ?></p>
+        <?php endif; ?>
+        <a hef="#" class="btn btn-primary">View All</a>
       </div>
-      <a hef="#" class="btn btn-primary">View All</a>
     </div>
-    </p>
   </div>
 </section>
 <?= get_footer(); ?>

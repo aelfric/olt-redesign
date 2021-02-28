@@ -234,7 +234,7 @@ nav .nav-link::after {
   cursor: pointer;
 }
 
-.news-article hr {
+hr {
   height: 0.5em;
   border: none;
   background-color: var(--olt-purple);
@@ -259,6 +259,7 @@ nav .nav-link::after {
   height: 480px;
   display: flex;
   align-items: center;
+  background-color: var(--olt-white);
 }
 
 .production--image::before {
@@ -428,29 +429,8 @@ section.past-productions {
     padding-top: 10rem;
 }
 
-.album-grid{
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  max-height: 690px;
-  justify-content: space-between;
-  gap: 50px 0;
+.album {
   margin: 2em 0;
-}
-
-.grid-1x1 {
-  height: 50%;
-  width: 30%;
-  max-width: 490px;
-  max-height: 320px;
-}
-
-.grid-1x2 {
-  height: 100%;
-  width: 30%;
-  max-width: 490px;
-  max-height: 690px;
-  outline: 1em solid var(--olt-purple);
 }
 
 .sub-menu {
