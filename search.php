@@ -14,7 +14,6 @@
       $query = new WP_Query($args);
       if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
           <article class="news-article">
-            <!-- <img class="news-image" src="https://via.placeholder.com/490x490" /> -->
             <div class='news-article--image'>
               <?php echo the_post_thumbnail('featured-image') ?>
             </div>

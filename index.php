@@ -31,52 +31,64 @@
     <?php endif; ?>
   </div>
 </section>
-<section class='upcomming'>
+<section class='upcomming' id="productions">
   <p class="margin-text  margin-text--left">Featured Shows</p>
   <div class="centered-container">
     <h2 class="text-flourish text-purple text-xl">What's On</h2>
     <p class="text-display text-xl">Upcomming Performances</p>
   </div>
   <div class="flex centered-container">
-    <?php 
+    <?php
     $args = array(
       'post_type' => 'production',
       'posts_per_page' => 4,
-      'ignore_sticky_posts' => 1
+      'ignore_sticky_posts' => 1,
+      'meta_key' => 'start_date',
+      'orderby' => 'meta_value_num',
+      'meta_type' => 'DATE',
+      'order' => 'ASC'
     );
-    $query = new WP_Query($args);
-    if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
-    <article class="upcomming-production">
-      <?php echo the_post_thumbnail('production-marquee') ?>
-      <h3 class="text-display"><?= the_title() ?></h3>
-      <p style="text-transform: uppercase;"><?= get_field("start_date") ?> - <?= get_field("end_date") ?></p>
-      <a href="<?= the_permalink() ?>">More Information</a>
-    </article>
-<?php endwhile;
+    $productions_query = new WP_Query($args);
+    if ($productions_query->have_posts()) : while ($productions_query->have_posts()) : $productions_query->the_post(); ?>
+        <article class="upcomming-production">
+          <div class='production--image'>
+            <?php echo the_post_thumbnail('production-marquee') ?>
+          </div>
+          <h3 class="text-display"><?= the_title() ?></h3>
+          <p style="text-transform: uppercase;"><?= get_field("start_date") ?> - <?= get_field("end_date") ?></p>
+          <a href="<?= the_permalink() ?>">More Information</a>
+        </article>
+      <?php endwhile;
     else : ?>
       <p><?php esc_html_e('Sorry, no posts matched your criteria.'); ?></p>
     <?php endif; ?>
   </div>
 </section>
-<section class='auditions'>
+<section class='auditions' id="auditions">
   <h2 class="text-flourish text-centered text-xl">Participate</h2>
   <p class="subtitle text-centered text-xl text-display">Upcomming Auditions</p>
-  <article class="audition flex flex-row centered-container">
-    <img src="https://via.placeholder.com/150x150" style="height: 150px; width: 150px;" />
-    <div>
-      <h3 class="text-display">2020 - A Perfect Year for Magical Thinking</h3>
-      <p>Some brief description of the show</p>
-    </div>
-    <a href="#" class="btn btn-primary">Register Now</a>
-  </article>
-  <article class="audition flex flex-row centered-container">
-    <img src="https://via.placeholder.com/150x150" style="height: 150px; width: 150px;" />
-    <div>
-      <h3 class="text-display">2020 - A Perfect Year for Magical Thinking</h3>
-      <p>Some brief description of the show</p>
-    </div>
-    <a href="#" class="btn btn-primary">Register Now</a>
-  </article>
+  <?php
+  $args = array(
+    'post_type' => 'audition',
+    'posts_per_page' => 4,
+    'ignore_sticky_posts' => 1
+  );
+  $auditions_query = new WP_Query($args);
+  if ($auditions_query->have_posts()) : while ($auditions_query->have_posts()) : $auditions_query->the_post(); ?>
+      <article class="audition flex flex-row centered-container">
+        <div class='audition--image'>
+          <?php echo the_post_thumbnail('audition-thumb') ?>
+        </div>
+        <div>
+          <h3 class="text-display"><?= the_title() ?></h3>
+          <p>Some brief description of the show</p>
+        </div>
+        <a href="<?= the_permalink() ?>" class="btn btn-primary">Register Now</a>
+      </article>
+    <?php endwhile;
+  else : ?>
+    <p><?php esc_html_e('Sorry, no posts matched your criteria.'); ?></p>
+  <?php endif; ?>
 </section>
 <section class="news">
   <p class="margin-text">News and Updates</p>
@@ -88,8 +100,8 @@
       'posts_per_page' => 3,
       'ignore_sticky_posts' => 1
     );
-    $query = new WP_Query($args);
-    if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
+    $posts_query = new WP_Query($args);
+    if ($posts_query->have_posts()) : while ($posts_query->have_posts()) : $posts_query->the_post(); ?>
         <article class="news-article">
           <!-- <img class="news-image" src="https://via.placeholder.com/490x490" /> -->
           <div class='news-article--image'>
@@ -108,7 +120,10 @@
   </div>
   <div class="centered-container">
     <div class="centered">
-      <a hef="#" class="btn btn-primary">View All</a>
+      <form action="/">
+        <input type="hidden" name="s" />
+        <button type="submit" class="btn btn-primary">View All</button>
+      </form>
     </div>
     </p>
   </div>
@@ -125,7 +140,7 @@
               <feColorMatrix id="greyscaler" type="matrix" values="0.21 0.72 0.072 0 0 0.21 0.72 0.072 0 0 0.21 0.72 0.072 0 0 0 0 0 1 0 "></feColorMatrix>
           </defs>
 
-          <image x="0" y="0" width="1280" height="470" filter="url(#f1)" xlink:href="<?= wp_get_attachment_url(get_theme_mod('olt_settings_friend_image'))?>" />
+          <image x="0" y="0" width="1280" height="470" filter="url(#f1)" xlink:href="<?= wp_get_attachment_url(get_theme_mod('olt_settings_friend_image')) ?>" />
           <rect x="0" y="0" width="1280" height="470" style="opacity:0.819355;fill:#66348d;stroke-width: 0;" />
         </svg>
 
@@ -136,13 +151,13 @@
         <a href="#" class="btn btn-white">Donate Now</a>
       </div>
       <div class="become-a-friend bg-white text-black" style="position: relative;">
-      <svg viewbox="640 0 640 470" preserveAspectRatio="none"  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;">
-        <defs>
-          <filter id="f1" x="0%" y="0%" width="100%" height="100%">
-            <feColorMatrix id="greyscaler" type="matrix" values="0.21 0.72 0.072 0 0 0.21 0.72 0.072 0 0 0.21 0.72 0.072 0 0 0 0 0 1 0 "></feColorMatrix>
-        </defs>
-        <image x="0" y="0" width="1280" height="470" filter="url(#f1)" xlink:href="<?= wp_get_attachment_url(get_theme_mod('olt_settings_friend_image'))?>" />
-        <rect x="0" y="0" width="1280" height="470" fill="66348d" style="opacity:0.819355;fill:#f0f0f0;stroke-width: 0;" />
+        <svg viewbox="640 0 640 470" preserveAspectRatio="none" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;">
+          <defs>
+            <filter id="f1" x="0%" y="0%" width="100%" height="100%">
+              <feColorMatrix id="greyscaler" type="matrix" values="0.21 0.72 0.072 0 0 0.21 0.72 0.072 0 0 0.21 0.72 0.072 0 0 0 0 0 1 0 "></feColorMatrix>
+          </defs>
+          <image x="0" y="0" width="1280" height="470" filter="url(#f1)" xlink:href="<?= wp_get_attachment_url(get_theme_mod('olt_settings_friend_image')) ?>" />
+          <rect x="0" y="0" width="1280" height="470" fill="66348d" style="opacity:0.819355;fill:#f0f0f0;stroke-width: 0;" />
         </svg>
 
         <h3 class="text-display text-xl">Become a Friend</h3>
@@ -185,16 +200,6 @@
       <a hef="#" class="btn btn-primary">View All</a>
     </div>
     </p>
-  </div>
-</section>
-<section class="social">
-  <h2 class="text-flourish text-centered text-xl text-purple">Updates</h2>
-  <p class="subtitle text-centered text-xl text-display">Follow Us on Social Media</p>
-  <div class="flex centered-container">
-    <img src="https://via.placeholder.com/360x370" />
-    <img src="https://via.placeholder.com/360x370" />
-    <img src="https://via.placeholder.com/360x370" />
-    <img src="https://via.placeholder.com/360x370" />
   </div>
 </section>
 <?= get_footer(); ?>

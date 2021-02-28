@@ -254,6 +254,21 @@ nav .nav-link::after {
   flex-grow: 1;
 }
 
+
+.production--image {
+  height: 480px;
+  display: flex;
+  align-items: center;
+}
+
+.production--image::before {
+padding-bottom: 75%;
+content: "";
+display: inline-block;
+vertical-align: top;
+}
+
+
 .news-article--image {
     height: 490px;
     display: flex;
@@ -384,7 +399,6 @@ font-weight: bold;
 footer {
     padding: 8rem 0 3rem 0;
     position: relative;
-    z-index: -1;
     overflow: hidden;
 }
 
@@ -404,14 +418,6 @@ footer .logo {
     height: 100px;
     margin: 0 auto;
     display: block;
-}
-
-section.social {
-    margin-bottom: -8rem;
-}
-
-section.social img {
-  width: 20%;
 }
 
 section.support {

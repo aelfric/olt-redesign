@@ -1,5 +1,5 @@
 <footer>
-<svg viewbox="0 0 1920 510" preserveAspectRatio="none" style="position: absolute; top: 0; left: 0; height: 100%; z-index: -1;">
+<svg viewbox="0 0 1920 510" preserveAspectRatio="none" style="position: absolute; top: 0; left: 0; height: 100%;">
           <defs>
             <filter id="f1" x="0%" y="0%" width="100%" height="100%">
               <feColorMatrix id="greyscaler" type="matrix" values="0.21 0.72 0.072 0 0 0.21 0.72 0.072 0 0 0.21 0.72 0.072 0 0 0 0 0 1 0 "></feColorMatrix>
@@ -8,7 +8,9 @@
           <image x="0" y="0" width="510" height="510" filter="url(#f1)" xlink:href="<?= wp_get_attachment_url(get_theme_mod('olt_settings_footer_image'))?>" />
           <rect x="0" y="0" width="1920" height="510" style="opacity:0.819355;fill:#000;stroke-width: 0;" />
         </svg>
+        <div class="flex flex-top centered-container">
     <img class="logo" src="<?= get_template_directory_uri() ?>/cropped-OLT-BW-Logo-Thick21 (1).png">
+        </div>
     <div class="flex flex-top centered-container text-display">
 
       <ul>
@@ -80,7 +82,5 @@
       </ul>
     </div>
   </footer>
-  <script>
     <?= wp_footer() ?>
-  </script>
 </body>

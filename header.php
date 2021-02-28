@@ -22,7 +22,7 @@
           </div>
         </li>
         <li class="nav-link">
-          <a href="#">Tickets</a>
+          <a href="#productions">Tickets</a>
         </li>
         <li>
           <button type="button" class="menu-open">Productions</button>
@@ -40,10 +40,10 @@
           <a href="/"><img src="<?= get_template_directory_uri() ?>/cropped-OLT-BW-Logo-Thick21 (1).png"></a>
         </li>
         <li class="nav-link">
-          <a href="#">Auditions</a>
+          <a href="#auditions">Auditions</a>
         </li>
         <li class="">
-          <a href="#">Contact Us</a>
+          <a href="mailto:info@oldlibrarytheatre.net">Contact Us</a>
         </li>
         <li><a href="#" class="btn btn-primary">
             Donate Now</a>

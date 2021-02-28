@@ -30,21 +30,24 @@
     });
   }
 
-  const card = document.querySelector(".news-article");
-  const mainLink = document.querySelector(".read-more");
+  const cards = document.querySelectorAll(".news-article");
+  for (let i = 0; i < cards.length; i++) {
+    const card = cards[i]
+    const mainLink = card.querySelector(".read-more");
 
-  const clickableElements = Array.from(card.querySelectorAll("a"));
+    const clickableElements = Array.from(card.querySelectorAll("a"));
 
-  clickableElements.forEach((ele) =>
-    ele.addEventListener("click", (e) => e.stopPropagation())
-  );
+    clickableElements.forEach((ele) =>
+      ele.addEventListener("click", (e) => e.stopPropagation())
+    );
 
-  card.addEventListener("click", handleClick);
+    card.addEventListener("click", handleClick);
 
-  function handleClick(event) {
-    const isTextSelected = window.getSelection().toString();
-    if (!isTextSelected) {
-      mainLink.click();
+    function handleClick(event) {
+      const isTextSelected = window.getSelection().toString();
+      if (!isTextSelected) {
+        mainLink.click();
+      }
     }
   }
 })();

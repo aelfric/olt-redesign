@@ -1,0 +1,25 @@
+{
+  "name": "olt-redesign",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:scripts": "wp-scripts build",
+    "watch:scripts": "wp-scripts start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aelfric/olt-redesign.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aelfric/olt-redesign/issues"
+  },
+  "homepage": "https://github.com/aelfric/olt-redesign#readme",
+  "devDependencies": {
+    "@wordpress/scripts": "13.0.3"
+  }
+}
