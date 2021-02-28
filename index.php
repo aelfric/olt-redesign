@@ -207,7 +207,7 @@
           <p><?php esc_html_e('Sorry, no posts matched your criteria.'); ?></p>
         <?php endif; ?>
       </div>
-      <a hef="#" class="btn btn-primary">View All</a>
+      <a hef="https://www.flickr.com/photos/oldlibrarytheatre/albums" class="btn btn-primary">View All</a>
     </div>
   </div>
 </section>

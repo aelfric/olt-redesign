@@ -55,7 +55,7 @@
         <h1 class="text-flourish text-xxl"><?= get_bloginfo('name') ?></h1>
         <p class="text-display text-xl"><?= get_bloginfo('description') ?></p>
         <p class="text-l">Showcasing talented artists, creators, and performers who represent the full spectrum of the human experience at all stages of development.</p>
-        <a href=# class="btn btn-primary">BROWSE SHOWS</a>
+        <a href='#productions' class="btn btn-primary">BROWSE SHOWS</a>
       </div>
     </div>
   </header>
