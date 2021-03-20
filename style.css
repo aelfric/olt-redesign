@@ -1,6 +1,6 @@
 /*
 Theme Name: OLT 2021
-Version: 1.0.20210320
+Version: 1.0.202103201806
 */
 :root {
   --olt-purple: #66348D;
@@ -584,7 +584,7 @@ section.past-productions {
       width: 100%;
     }
 
-    footer .footer-column {
+    footer ul.footer-column {
       width: 100%;
     }
 
