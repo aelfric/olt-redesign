@@ -13,7 +13,7 @@
   </div>
   <nav class="flex flex-top centered-container text-display">
 
-    <ul>
+    <ul class="footer-column">
       <li> <button type="button" class="menu-open">About</button>
 
         <div class="sub-menu">
@@ -25,7 +25,7 @@
       <li><a href="#productions">Tickets</a></li>
       <li><a href="#productions">Productions</a></li>
     </ul>
-    <ul>
+    <ul class="footer-column">
       <li>
         <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="height: 1em; margin-right: 1em; fill: var(--olt-purple);" xml:space="preserve">
           <g>
@@ -88,7 +88,7 @@
         </span>
       </li>
     </ul>
-    <ul>
+    <ul class="footer-column">
       <li><a href="/">Home</a></li>
       <li><a href="#auditions">Auditions</a></li>
       <li>&nbsp;</li>

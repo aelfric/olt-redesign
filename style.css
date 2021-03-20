@@ -403,10 +403,10 @@ footer {
     overflow: hidden;
 }
 
-footer ul {
+footer ul.footer-column {
     width: 30%;
 }
-footer li {
+.footer-column > li {
     text-align: center;
     margin-top: 1em;
 }

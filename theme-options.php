@@ -91,8 +91,8 @@ class OltSiteOptions
             array(
                 'label' => 'Footer Image',
                 'section' => $this->SECTION,
-                'height' => 470,
-                'width' => 1280,
+                'height' => 510,
+                'width' => 510,
                 'settings' => 'olt_settings_footer_image'
             )
         ));
