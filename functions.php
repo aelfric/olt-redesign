@@ -8,11 +8,16 @@ require_once(get_template_directory() . '/inc/image-sizes.php');
 
 function link_css_stylesheet()
 {
+  $theme = wp_get_theme();
   wp_enqueue_style('normalize', get_template_directory_uri() . '/normalize.css');
   wp_enqueue_style('fonts', get_template_directory_uri() . '/fonts.css');
-  wp_enqueue_style('style', get_stylesheet_uri());
+  wp_enqueue_style('style', 
+    get_stylesheet_uri(),
+    array(), 
+    $theme->get('Version')
+  );
 
-  wp_enqueue_script('main', get_template_directory_uri() . '/script.js', "", "", true);
+  wp_enqueue_script('main', get_template_directory_uri() . '/script.js', "", $theme->get('Version'), true);
 }
 
 function register_my_menus()
