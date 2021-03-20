@@ -30,7 +30,7 @@
     });
   }
 
-  const cards = document.querySelectorAll(".news-article");
+  const cards = document.querySelectorAll(".news-article,.upcoming-production");
   for (let i = 0; i < cards.length; i++) {
     const card = cards[i]
     const mainLink = card.querySelector(".read-more");
@@ -73,4 +73,5 @@
   for(let i = 0; i < years.length; i++){
     years[i].addEventListener('click', loadTimelineYear);
   }
+  years[years.length-1].classList.add('active');
 })();

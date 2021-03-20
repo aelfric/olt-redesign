@@ -41,7 +41,7 @@
         </li>
       </ul>
     </nav>
-    <div class="centered-container flex">
+    <div class="header-container centered-container flex">
       <div class="header-block half">
         <h1 class="text-flourish text-xxl"><?= get_bloginfo('name') ?></h1>
         <p class="text-display text-xl"><?= get_bloginfo('description') ?></p>

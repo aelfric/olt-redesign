@@ -103,6 +103,10 @@ header {
   background-position: center top;
 }
 
+.header-container {
+  padding: 0 1.5em;
+}
+
 header::before {
   display: block;
   background-image: linear-gradient(to right, rgba(0,0,0,.5), rgba(0,0,0,.5) 50%, rgba(0,0,0,0));
@@ -231,6 +235,9 @@ nav .nav-link::after {
 .news-article {
   width: 30%;
   position: relative;
+}
+
+.upcoming-production, .news-article {
   cursor: pointer;
 }
 
@@ -551,6 +558,24 @@ section.past-productions {
     .timeline {
       flex-direction: column;
     }
+
+    .timeline li {
+      display: flex;
+      align-items: center;
+    }
+
+    .timeline::before {
+      left: 1em;
+      height: 100%;
+      width: 0.5em;
+      border: none;
+      background: #e6e6e6;
+    }
+    
+    .timeline li::before {
+      margin: 0 1em 0 1em;
+    }
+
     .news-article {
       width: 100%;
     }

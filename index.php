@@ -57,7 +57,7 @@
           <hr />
           <h3 class="text-display"><?= the_title() ?></h3>
           <p style="text-transform: uppercase;"><?= get_field("start_date") ?> - <?= get_field("end_date") ?></p>
-          <a href="<?= the_permalink() ?>">More Information</a>
+          <a class="read-more" href="<?= the_permalink() ?>">More Information</a>
         </article>
       <?php endwhile;
     else : ?>
@@ -189,7 +189,11 @@
         $gallery_query = new WP_Query($args);
         while ($gallery_query->have_posts()){ 
           $gallery_query->the_post();?>
-      <li class='timeline-year <?= get_the_title() == '2019' ? 'active' : '' ?>' data-post-id="<?= the_ID() ?>"><?= the_title() ?></li>
+      <li class='timeline-year'  data-post-id="<?= the_ID() ?>">
+      <span>
+        <?= the_title() ?>
+      </span>
+    </li>
       <?php } ?>
     </ul>
     <div class="centered">
