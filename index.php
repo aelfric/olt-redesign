@@ -82,13 +82,15 @@
         </div>
         <div>
           <h3 class="text-display"><?= the_title() ?></h3>
-          <p>Some brief description of the show</p>
+          <?= the_excerpt() ?>
         </div>
         <a href="<?= the_permalink() ?>" class="btn btn-primary">Register Now</a>
       </article>
     <?php endwhile;
   else : ?>
-    <p><?php esc_html_e('Sorry, no upcomming auditions at this time.'); ?></p>
+    <article class="audition flex flex-row centered-container">
+      <?php esc_html_e('Sorry, no upcomming auditions at this time.'); ?>
+    </article>
   <?php endif; ?>
 </section>
 <section class="news">
@@ -178,22 +180,22 @@
   <p class="subtitle text-centered text-xl text-display">Past Performances</p>
   <div class="centered-container">
     <ul class="timeline">
-    <?php
-        $args = array(
-          'post_type' => 'timeline-year',
-          'posts_per_page' => 10,
-          'orderby' => 'title',
-          'order' => 'ASC',
-          'no_found_rows' => true
-        );
-        $gallery_query = new WP_Query($args);
-        while ($gallery_query->have_posts()){ 
-          $gallery_query->the_post();?>
-      <li class='timeline-year'  data-post-id="<?= the_ID() ?>">
-      <span>
-        <?= the_title() ?>
-      </span>
-    </li>
+      <?php
+      $args = array(
+        'post_type' => 'timeline-year',
+        'posts_per_page' => 10,
+        'orderby' => 'title',
+        'order' => 'ASC',
+        'no_found_rows' => true
+      );
+      $gallery_query = new WP_Query($args);
+      while ($gallery_query->have_posts()) {
+        $gallery_query->the_post(); ?>
+        <li class='timeline-year' data-post-id="<?= the_ID() ?>">
+          <span>
+            <?= the_title() ?>
+          </span>
+        </li>
       <?php } ?>
     </ul>
     <div class="centered">
