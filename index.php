@@ -89,7 +89,7 @@
     <?php endwhile;
   else : ?>
     <article class="audition flex flex-row centered-container">
-      <?php esc_html_e('Sorry, no upcomming auditions at this time.'); ?>
+      <?php esc_html_e('Sorry, no upcoming auditions at this time.'); ?>
     </article>
   <?php endif; ?>
 </section>
