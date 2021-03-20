@@ -88,7 +88,7 @@
       </article>
     <?php endwhile;
   else : ?>
-    <p><?php esc_html_e('Sorry, no posts matched your criteria.'); ?></p>
+    <p><?php esc_html_e('Sorry, no upcomming auditions at this time.'); ?></p>
   <?php endif; ?>
 </section>
 <section class="news">
@@ -146,11 +146,11 @@
           <rect x="0" y="0" width="1280" height="470" style="opacity:0.819355;fill:#66348d;stroke-width: 0;" />
         </svg>
 
-        <h3 class="text-display text-xl ">Become a Donor</h3>
+        <h3 class="text-display text-xl ">Make a Donation</h3>
         <p class="flex-grow">
           <?php echo get_theme_mod('olt_settings_donate_text'); ?>
         </p>
-        <a href="#" class="btn btn-white">Donate Now</a>
+        <a href="<?= get_theme_mod('olt_donate_link'); ?>" class="btn btn-white">Make a Donation</a>
       </div>
       <div class="become-a-friend bg-white text-black" style="position: relative;">
         <svg viewbox="640 0 640 470" preserveAspectRatio="none" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;">
@@ -166,7 +166,7 @@
         <p class="flex-grow">
           <?php echo get_theme_mod('olt_settings_friend_text'); ?>
         </p>
-        <a href="#" class="btn btn-primary">Become a Friend</a>
+        <a href="<?= get_theme_mod('olt_friend_link'); ?>" class="btn btn-primary">Become a Friend</a>
       </div>
     </div>
   </div>
@@ -207,7 +207,7 @@
           <p><?php esc_html_e('Sorry, no posts matched your criteria.'); ?></p>
         <?php endif; ?>
       </div>
-      <a hef="https://www.flickr.com/photos/oldlibrarytheatre/albums" class="btn btn-primary">View All</a>
+      <a href="https://www.flickr.com/photos/oldlibrarytheatre/albums" class="btn btn-primary">View All</a>
     </div>
   </div>
 </section>

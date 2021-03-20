@@ -39,7 +39,7 @@ class ProductionPostType
             'hierarchical'          => false,
             'show_ui'               => true,
             'show_in_nav_menus'     => true,
-            'supports'              => array('title', 'editor'),
+            'supports'              => array('title', 'editor', 'thumbnail'),
             'rewrite'               => array('slug' => 'production'),
             'has_archive'           => true,
             'rewrite'               => true,

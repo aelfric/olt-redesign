@@ -30,6 +30,7 @@ add_theme_support('custom-logo');
 add_theme_support('title-tag');
 
 new OltSiteOptions();
+new OltLinkSettings();
 new AudtionPostType();
 new TimelineYearPostType();
 new ProductionPostType();

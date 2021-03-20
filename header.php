@@ -24,17 +24,8 @@
         <li class="nav-link">
           <a href="#productions">Tickets</a>
         </li>
-        <li>
-          <button type="button" class="menu-open">Productions</button>
-          <div class="sub-menu">
-            <button type="button" class="menu-close">close</button>
-            <ul>
-              <li><a href="#">2021 Season</a></li>
-              <li><a href="#">NEWS AND REVIEWS</a></li>
-              <li><a href="#">PAST PRODUCTIONS</a></li>
-              <li><a href="#">READER’S THEATRE</a></li>
-            </ul>
-          </div>
+        <li class="nav-link">
+          <a href="#productions">Productions</a>
         </li>
         <li class="nav-logo">
           <a href="/"><img src="<?= get_template_directory_uri() ?>/cropped-OLT-BW-Logo-Thick21 (1).png"></a>
@@ -45,7 +36,7 @@
         <li class="">
           <a href="mailto:info@oldlibrarytheatre.net">Contact Us</a>
         </li>
-        <li><a href="#" class="btn btn-primary">
+        <li><a href="<?= get_theme_mod('olt_donate_link'); ?>" class="btn btn-primary">
             Donate Now</a>
         </li>
       </ul>
