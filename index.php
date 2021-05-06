@@ -19,9 +19,9 @@
       </h2>
       <p class="text-display text-xl"><?= the_title() ?></p>
       <div class="content">
-        <? if(null !== get_field("register_link")) { ?>
+        <? if (null !== get_field("register_link")) { ?>
           <a href="<?= get_field("register_link") ?>" class="btn btn-primary">Register Now</a>
-          <? } ?>
+        <? } ?>
         <?= the_content() ?>
       </div>
     </div>
@@ -45,11 +45,19 @@
       'post_type' => 'production',
       'posts_per_page' => 4,
       'ignore_sticky_posts' => 1,
-      'meta_key' => 'start_date',
+      'meta_key' => 'end_date',
       'orderby' => 'meta_value_num',
       'meta_type' => 'DATE',
       'order' => 'ASC',
-      'no_found_rows' => true
+      'no_found_rows' => true,
+      'meta_query' => array(
+        array(
+          'key' => 'end_date',
+          'value' => date("Ymd"), // date format error
+          'compare' => '>=',
+          'type' => 'DATE'
+        ),
+      ),
     );
     $productions_query = new WP_Query($args);
     if ($productions_query->have_posts()) : while ($productions_query->have_posts()) : $productions_query->the_post(); ?>
@@ -64,7 +72,7 @@
         </article>
       <?php endwhile;
     else : ?>
-      <p><?php esc_html_e('Sorry, no posts matched your criteria.'); ?></p>
+      <p><?php esc_html_e('Sorry, no upcoming performances at this time.'); ?></p>
     <?php endif; ?>
   </div>
 </section>
@@ -72,30 +80,30 @@
   <h2 class="text-flourish text-centered text-xl">Participate</h2>
   <p class="subtitle text-centered text-xl text-display">Upcoming Auditions</p>
   <div class="centered-container">
-  <?php
-  $args = array(
-    'post_type' => 'audition',
-    'posts_per_page' => 4,
-    'ignore_sticky_posts' => 1
-  );
-  $auditions_query = new WP_Query($args);
-  if ($auditions_query->have_posts()) : while ($auditions_query->have_posts()) : $auditions_query->the_post(); ?>
+    <?php
+    $args = array(
+      'post_type' => 'audition',
+      'posts_per_page' => 4,
+      'ignore_sticky_posts' => 1
+    );
+    $auditions_query = new WP_Query($args);
+    if ($auditions_query->have_posts()) : while ($auditions_query->have_posts()) : $auditions_query->the_post(); ?>
+        <article class="audition flex flex-row">
+          <div class='audition--image'>
+            <?= the_post_thumbnail('audition-thumb') ?>
+          </div>
+          <div class="audition--snippet">
+            <h3 class="text-display"><a href="<?= the_permalink() ?>" class="read-more"><?= the_title() ?></a></h3>
+            <?= the_excerpt() ?>
+          </div>
+          <div><a href="<?= get_field("register_link") ?>" class="btn btn-primary">Register Now</a></div>
+        </article>
+      <?php endwhile;
+    else : ?>
       <article class="audition flex flex-row">
-        <div class='audition--image'>
-          <?= the_post_thumbnail('audition-thumb') ?>
-        </div>
-        <div class="audition--snippet">
-          <h3 class="text-display"><a href="<?= the_permalink() ?>" class="read-more"><?= the_title() ?></a></h3>
-          <?= the_excerpt() ?>
-        </div>
-        <div><a href="<?= get_field("register_link") ?>" class="btn btn-primary">Register Now</a></div>
+        <?php esc_html_e('Sorry, no upcoming auditions at this time.'); ?>
       </article>
-    <?php endwhile;
-  else : ?>
-    <article class="audition flex flex-row">
-      <?php esc_html_e('Sorry, no upcoming auditions at this time.'); ?>
-    </article>
-  <?php endif; ?>
+    <?php endif; ?>
   </div>
 </section>
 <section class="news">
