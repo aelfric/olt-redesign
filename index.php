@@ -19,6 +19,9 @@
       </h2>
       <p class="text-display text-xl"><?= the_title() ?></p>
       <div class="content">
+        <? if(null !== get_field("register_link")) { ?>
+          <a href="<?= get_field("register_link") ?>" class="btn btn-primary">Register Now</a>
+          <? } ?>
         <?= the_content() ?>
       </div>
     </div>
@@ -68,6 +71,7 @@
 <section class='auditions' id="auditions">
   <h2 class="text-flourish text-centered text-xl">Participate</h2>
   <p class="subtitle text-centered text-xl text-display">Upcoming Auditions</p>
+  <div class="centered-container">
   <?php
   $args = array(
     'post_type' => 'audition',
@@ -76,22 +80,23 @@
   );
   $auditions_query = new WP_Query($args);
   if ($auditions_query->have_posts()) : while ($auditions_query->have_posts()) : $auditions_query->the_post(); ?>
-      <article class="audition flex flex-row centered-container">
+      <article class="audition flex flex-row">
         <div class='audition--image'>
           <?= the_post_thumbnail('audition-thumb') ?>
         </div>
-        <div>
-          <h3 class="text-display"><?= the_title() ?></h3>
+        <div class="audition--snippet">
+          <h3 class="text-display"><a href="<?= the_permalink() ?>" class="read-more"><?= the_title() ?></a></h3>
           <?= the_excerpt() ?>
         </div>
-        <a href="<?= the_permalink() ?>" class="btn btn-primary">Register Now</a>
+        <div><a href="<?= get_field("register_link") ?>" class="btn btn-primary">Register Now</a></div>
       </article>
     <?php endwhile;
   else : ?>
-    <article class="audition flex flex-row centered-container">
+    <article class="audition flex flex-row">
       <?php esc_html_e('Sorry, no upcoming auditions at this time.'); ?>
     </article>
   <?php endif; ?>
+  </div>
 </section>
 <section class="news">
   <p class="margin-text">News and Updates</p>

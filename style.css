@@ -254,11 +254,20 @@ hr {
 .audition {
   background-color: black;
   margin-bottom: 1em;
+  flex-wrap: nowrap;
+  gap: 1em;
 }
 
-.audition div {
-  padding-left: 1em;
+.audition .read-more {
+  color: inherit;
+}
+
+.audition--snippet {
   flex-grow: 1;
+}
+
+.audition--image {
+  min-width: 150px;
 }
 
 
@@ -556,6 +565,10 @@ section.past-productions {
     }
 
     .timeline {
+      flex-direction: column;
+    }
+
+    .audition.flex.flex-row {
       flex-direction: column;
     }
 

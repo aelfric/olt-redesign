@@ -30,7 +30,7 @@
     });
   }
 
-  const cards = document.querySelectorAll(".news-article,.upcoming-production");
+  const cards = document.querySelectorAll(".news-article,.upcoming-production,.audition");
   for (let i = 0; i < cards.length; i++) {
     const card = cards[i]
     const mainLink = card.querySelector(".read-more");
