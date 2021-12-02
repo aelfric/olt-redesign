@@ -16,6 +16,7 @@ class OltImageSizes
         add_image_size('production-marquee', 360, 480, TRUE);
         add_image_size('audition-thumb', 150, 150, TRUE);
 
-        add_filter('post_thumbnail_html', array($this, 'remove_widthHeight_attribute'), 10);
+        add_filter('post_thumbnail_html', array($this, 'remove_widthHeight_attribute'), 10, 1);
+        add_filter( 'dfi_thumbnail_html', 'dfi_add_class', 10, 1);
     }
 }
