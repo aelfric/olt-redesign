@@ -541,6 +541,11 @@ section.past-productions {
   box-shadow: 0 0 0px 5px rgb(102 52 141 / 25%);
 }
 
+.small-header {
+  text-align: center;
+  background-color: var(--olt-black);
+}
+
 @media screen and (max-width: 1000px) {
     body {
       font-size: 20px;
