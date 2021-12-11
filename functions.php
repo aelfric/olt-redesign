@@ -11,9 +11,16 @@ function link_css_stylesheet()
   $theme = wp_get_theme();
   wp_enqueue_style('normalize', get_template_directory_uri() . '/normalize.css');
   wp_enqueue_style('fonts', get_template_directory_uri() . '/fonts.css');
-  wp_enqueue_style('style', 
+  wp_enqueue_style(
+    'style',
     get_stylesheet_uri(),
-    array(), 
+    array(),
+    $theme->get('Version')
+  );
+  wp_enqueue_style(
+    'block-styles',
+    get_template_directory_uri() . '/block-styles.css',
+    array(),
     $theme->get('Version')
   );
 
@@ -52,6 +59,9 @@ function olt_gutenberg_blocks()
   register_block_type('olt/show-date', array(
     'editor_script' => 'olt-gutenberg-js'
   ));
+  add_theme_support('editor-styles');
+  add_editor_style('style.css');
+  add_editor_style('block-styles.css');
 }
 
 add_action('init', 'olt_gutenberg_blocks');

@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "settings": {
+    "color": {
+      "palette": [
+        {
+          "name": "Purple",
+          "slug": "olt-purple",
+          "color": "#66348D"
+        },
+        {
+          "name": "White",
+          "slug": "olt-white",
+          "color": "#fefefe"
+        },
+        {
+          "name": "Black",
+          "slug": "olt-black",
+          "color": "#000000"
+        },
+        {
+          "name": "Gray",
+          "slug": "olt-gray",
+          "color": "#f8f8f8"
+        }
+      ]
+    },
+    "border": {
+      "customRadius": false
+    },
+    "typography": {
+      "customFontSize": false
+    }
+  }
+}
