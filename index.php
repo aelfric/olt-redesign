@@ -26,9 +26,11 @@
       </div>
     </div>
     <?php if (get_field("footer_image")) : ?>
-      <div class="spacer" style="width: 220px; height: 320px;"></div>
-      <div class="image-v-purple" style="max-width: 1280px;">
+      <div class="footer-image">
+      <div class="spacer"></div>
+      <div class="image-v-purple">
         <img src="<?= get_field("footer_image")["sizes"]["footer-image"] ?>" />
+      </div>
       </div>
     <?php endif; ?>
   </div>
