@@ -20,7 +20,7 @@
       <p class="text-display text-xl"><?= the_title() ?></p>
       <div class="content">
         <? if (null !== get_field("register_link")) { ?>
-          <a href="<?= get_field("register_link") ?>" class="btn btn-primary">Register Now</a>
+          <a href="<?= get_field("register_link") ?>" class="btn btn-primary">More Detailsw</a>
         <? } ?>
         <?= the_content() ?>
       </div>
