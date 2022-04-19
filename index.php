@@ -19,9 +19,6 @@
       </h2>
       <p class="text-display text-xl"><?= the_title() ?></p>
       <div class="content">
-        <? if (null !== get_field("register_link")) { ?>
-          <a href="<?= get_field("register_link") ?>" class="btn btn-primary">More Detailsw</a>
-        <? } ?>
         <?= the_content() ?>
       </div>
     </div>
@@ -98,7 +95,7 @@
             <h3 class="text-display"><a href="<?= the_permalink() ?>" class="read-more"><?= the_title() ?></a></h3>
             <?= the_excerpt() ?>
           </div>
-          <div><a href="<?= get_field("register_link") ?>" class="btn btn-primary">Register Now</a></div>
+          <div><a href="<?= get_field("register_link") ?>" class="btn btn-primary">More Details</a></div>
         </article>
       <?php endwhile;
     else : ?>
